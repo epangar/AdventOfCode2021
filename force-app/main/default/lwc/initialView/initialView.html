@@ -1,3 +1,16 @@
 <template>
-    
+  <lightning-card title="InitialTesting" >
+    <div class="slds-m-around_medium">
+      <p> {title}</p>
+    </div>
+    <div>
+      <ul>
+        <template for:each={accounts}  for:item="account">
+          <li key={account.Id}>
+            {account.Name}
+          </li>
+        </template>
+      </ul>
+    </div>
+</lightning-card>
 </template>
