@@ -1,0 +1,13 @@
+<template>
+    <p> FromChooseMission</p>
+    <lightning-combobox
+            name="progress"
+            label="Status"
+            value={value}
+            placeholder="Select a Mission"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+
+    <p>The selected mission is: {value}</p>
+
+</template>

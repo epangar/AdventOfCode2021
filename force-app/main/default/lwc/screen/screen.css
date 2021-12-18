@@ -1,0 +1,8 @@
+.screen{
+  background-color: white;
+}
+
+.screen__children{
+  display:flex;
+  justify-content: space-around;
+}

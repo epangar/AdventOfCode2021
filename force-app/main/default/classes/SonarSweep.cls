@@ -1,4 +1,6 @@
 public with sharing class SonarSweep {
+    public String Title = 'Sonar Sweep';
+    public Integer Day = 1;
     
     public Integer getGaps(List<Integer> differentHeights){
         System.debug(differentHeights);

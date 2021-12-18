@@ -1,0 +1,9 @@
+<template >
+  <lightning-card class ="screen">
+    <h2> Choose a challenge</h2>
+    <div class="screen__children"> 
+      <c-form-choose-mission ongetmission={handleMisionValue}></c-form-choose-mission>
+      <c-show-mission-solution onsendmission={missionToSend}></c-show-mission-solution>
+    </div>
+  </lightning-card>
+</template>
