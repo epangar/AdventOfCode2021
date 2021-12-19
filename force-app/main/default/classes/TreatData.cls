@@ -14,4 +14,25 @@ public with sharing class TreatData {
 
         return answer;
     }
+
+    public static List<Map<String,Integer>> treatStringAndIntegerList(string resourceName){
+        StaticResource resourceBody = [SELECT Body, Name FROM StaticResource WHERE Name = :resourceName ];
+
+        List<Map<String,Integer>> answer = new List<Map<String, Integer>>();
+
+        String contents = resourceBody.body.toString();
+        for(String line:contents.split('\n')) {
+            // Process Logic Here
+            List<String> separation = line.split(' ');
+            String direction = String.valueOf(separation[0]);
+            Integer meters = Integer.valueOf(separation[1]);
+            Map<String, Integer> currentInstruction = new Map<String, Integer> {
+                direction => meters
+            };
+            answer.add(currentInstruction);
+        }
+
+        System.debug(answer);
+        return answer;
+    }
 }

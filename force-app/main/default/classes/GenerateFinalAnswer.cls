@@ -7,14 +7,11 @@ public with sharing class GenerateFinalAnswer {
 
             if(mission == 'sonarSweep'){
                 obj = new SonarSweep();
-                System.debug(obj);
+            } else if (mission == 'dive'){
+                obj = new Dive();
             }
     
             Map<String, Object> myMap = (Map<String, Object>) JSON.deserializeUntyped(JSON.serialize(obj));
-    
-            system.debug(myMap);
-            system.debug(myMap.values());
-            system.debug(myMap.keyset());
             return myMap;
 
         } catch (Exception ex) {
