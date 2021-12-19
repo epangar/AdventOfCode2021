@@ -13,18 +13,9 @@ export default class FormChooseMission extends LightningElement {
 
   handleChange(event) {
     this.mission = {mission: event.target.value};
-    /* console.log(">>>>>>>>",this.mission); */
-    /* const missionEventToDispatch = new CustomEvent('getmission', {
-      // detail contains only primitives
-      detail: this.mission
-    });
-    this.dispatchEvent(missionEventToDispatch); */
-
-    if(this.mission !== undefined){
-      publish(this.messageContext, MISSION_UPDATED_CHANNEL, this.mission);
-    } else {
-      console.log("NOPE");
-    }
+    console.log(event.target);
+    this.value = event.target.options.find(opt => opt.value === event.detail.value).label;;
+    publish(this.messageContext, MISSION_UPDATED_CHANNEL, this.mission);
   }
 
   get options() {
