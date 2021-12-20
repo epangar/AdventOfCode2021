@@ -39,13 +39,11 @@ export default class ShowMissionSolution extends LightningElement {
     
     returnFinalAnswer({mission:currentMission})
       .then(result => {
-        console.log(result);
         this.title = result.Title;
         this.day = result.Day;
         this.URL = "https://adventofcode.com/2021/day/"+result.Day;
         this.firstSolution = result.firstAnswer;
         this.secondSolution = result.secondAnswer;
-        console.log(this);
       })
       .catch(error => {
         console.log(error);
