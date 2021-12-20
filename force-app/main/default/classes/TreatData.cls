@@ -1,4 +1,19 @@
 public with sharing class TreatData {
+
+    public static List<String> treatStringList(string resourceName){
+        StaticResource resourceBody = [SELECT Body, Name FROM StaticResource WHERE Name = :resourceName ];
+
+        List<String> answer = new List<String>();
+
+        String contents = resourceBody.body.toString();
+        for(String line:contents.split('\n')) {
+            // Process Logic Here
+            //String str = Integer.valueOf(line);
+            answer.add(line);
+        }
+
+        return answer;
+    }
     
     public static List<Integer> treatIntegerList(string resourceName){
         StaticResource resourceBody = [SELECT Body, Name FROM StaticResource WHERE Name = :resourceName ];
