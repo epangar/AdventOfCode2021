@@ -40,8 +40,13 @@ public with sharing class TestBinaryDiagnostic {
         };
 
         Test.startTest();
+<<<<<<< HEAD
         Integer totalLifeSupportRating = BinaryDiagnostic.getLifeSupportRating(binaries);
         System.equals(totalLifeSupportRating = 230, 'The solution must be 230.');
+=======
+        Integer totalPowerConsumption = BinaryDiagnostic.getLifeSupportRating(binaries);
+        System.equals(totalPowerConsumption = 230, 'The solution must be 230.');
+>>>>>>> c08d3abbc93593807ba2788603493412547c90d4
         Test.stopTest();
     }
 }

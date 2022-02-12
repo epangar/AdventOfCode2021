@@ -39,6 +39,7 @@ public with sharing class BinaryDiagnostic {
 
     public static Integer getLifeSupportRating(List<String> binaries) {
         String oxigen = '';
+<<<<<<< HEAD
         String scrubber = '';
 
         for(Integer position = 0; position < binaries[0].length(); position++){
@@ -70,6 +71,61 @@ public with sharing class BinaryDiagnostic {
         }
 
         return 0;
+=======
+        String co2 = '';
+        List<String> orderedBinaries = new List<String>();
+
+        for(Integer i = 0; i < 5; i++){
+            Integer zeroes = 0;
+            Integer ones = 0;
+            String mostCommon;
+            String leastCommon;
+
+            for(String currentBinary: binaries){
+                String currentBit = currentBinary.substring(i);
+
+                if(currentBit == '0'){
+                    zeroes++;
+                } else {
+                    ones++;
+                }
+            }
+
+            for (Integer j = (binaries.size()-1) ; j>= 0 ; j--){
+                
+                String currentBinary = binaries[j];
+
+
+                
+                if(zeroes > ones){
+                    mostCommon = '0';
+                    leastCommon = '1';
+                } else {
+                    mostCommon = '1';
+                    leastCommon = '0';
+                }
+                //We know now the most and least common of this iteration
+
+                //Current binary bit
+                String currentBit = currentBinary.substring(i);
+
+                if(binaries.size() == 1){
+                    break;
+                }
+
+                if(currentBit == mostCommon && !orderedBinaries.contains(currentBinary)){
+                    orderedBinaries.add(currentBinary);
+                    binaries.remove(j);
+                }
+                
+            }
+        }
+
+
+        Integer decimalOxigen = BinaryDiagnostic.binaryToInteger(oxigen);
+        Integer decimalCO2 = BinaryDiagnostic.binaryToInteger(CO2);
+        return decimalOxigen * decimalCO2;
+>>>>>>> c08d3abbc93593807ba2788603493412547c90d4
     }
 
     public static String mostCommonValueInBinaries(List<String> binaries, Integer position){
