@@ -39,39 +39,6 @@ public with sharing class BinaryDiagnostic {
 
     public static Integer getLifeSupportRating(List<String> binaries) {
         String oxigen = '';
-<<<<<<< HEAD
-        String scrubber = '';
-
-        for(Integer position = 0; position < binaries[0].length(); position++){
-            Integer ones = 0;
-            Integer zeroes = 0;
-            /* List<String> numberOfBinaries = new List<String>();
-
-            for(String currentBinary : binaries){                                                                                
-                String current = currentBinary.substring(position, position+1);                    
-                if(current == '0'){
-                    zeroes++;
-                } else {
-                    ones++;
-                } 
-            }
-
-            for(Integer i = binaries.size()-1 ; i >= 0; i-- ){     
-                String currentBinary = bonaries[i];                                                                           
-                String current = currentBinary.substring(position, position+1);                    
-                if(zeroes > ones){
-                    
-                } else {
-                    
-                } 
-            } */
-
-            
-
-        }
-
-        return 0;
-=======
         String co2 = '';
         List<String> orderedBinaries = new List<String>();
 
@@ -125,7 +92,6 @@ public with sharing class BinaryDiagnostic {
         Integer decimalOxigen = BinaryDiagnostic.binaryToInteger(oxigen);
         Integer decimalCO2 = BinaryDiagnostic.binaryToInteger(CO2);
         return decimalOxigen * decimalCO2;
->>>>>>> c08d3abbc93593807ba2788603493412547c90d4
     }
 
     public static String mostCommonValueInBinaries(List<String> binaries, Integer position){
