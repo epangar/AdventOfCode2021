@@ -38,5 +38,10 @@ public with sharing class TestBinaryDiagnostic {
             '00010',
             '01010'
         };
+
+        Test.startTest();
+        Integer totalLifeSupportRating = BinaryDiagnostic.getLifeSupportRating(binaries);
+        System.equals(totalLifeSupportRating = 230, 'The solution must be 230.');
+        Test.stopTest();
     }
 }
